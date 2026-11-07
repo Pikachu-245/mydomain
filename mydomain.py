@@ -2,6 +2,9 @@
 # usage: python3 mydomain.py -d <domaine> où mydomain -d <domaine>
 # exemple: python3 mydomain.py -d tesla.com --recursive -i 
 #          mydomain -d tesla.com --recurisive -i
+# le mieux est de l'ajouter à votre patch root pour pourvoir l'utiliser partout dans votre terminal.
+
+#par Pikachu :)
 
 import requests
 from rich.live import Live
@@ -23,6 +26,25 @@ parser.add_argument('-rl', '--rate-limit', type=int, default=1, help='rate limit
 parser.add_argument('-d', '--domaine', type=str, required=True, help='enumerate subdomains')
 parser.add_argument('-i', '--ip', action='store_true', help='get IP adress of subdomains')
 
+console.print("""
+[bold cyan]
+                              888                                 d8b          
+                            888                                 Y8P          
+                            888                                            vesrion 1.0  
+88888b.d88b.  888  888  .d88888  .d88b.  88888b.d88b.   8888b.  888 88888b.  
+888 "888 "88b 888  888 d88" 888 d88""88b 888 "888 "88b     "88b 888 888 "88b 
+888  888  888 888  888 888  888 888  888 888  888  888 .d888888 888 888  888 
+888  888  888 Y88b 888 Y88b 888 Y88..88P 888  888  888 888  888 888 888  888 
+888  888  888  "Y88888  "Y88888  "Y88P"  888  888  888 "Y888888 888 888  888 
+                   888                                                       
+              Y8b d88P                                                       
+               "Y88P"                                                        
+                               
+[/bold cyan]
+[green]by Pikachu[/green]
+[dim]                 FILESS[/dim]
+[dim]          [yellow]OUtils d'énumération de subdomaine avancé. [/yellow]  [/dim]
+""")
 
 args = parser.parse_args()
 console.print(f"[yellow][+] domaine : {args.domaine} | timeout : {args.timeout} | rate-limit : {args.rate_limit} [/yellow]")
